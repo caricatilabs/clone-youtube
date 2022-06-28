@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f9f9f9;
+  color: #030303;
+}
+
+a {
+  text-decoration: none;
+}
+
+.reset-button {
+  border: none;
+  background: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.btn-signin {
+  height: 36px;
+  font-size: 14px;
+  color: #065fd4;
+  display: flex;
+  align-items: center;
+  border: 1px solid #065fd4;
+  padding: 0 0.75rem;
+  background-color: #fff;
+  border-radius: 2px;
+  cursor: pointer;
+
+  &.btn-large {
+    height: 40px;
+  }
+
+  span {
+    margin-left: 0.75rem;
+  }
+}
+
+#header {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 0 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+
+  .logo {
+    margin-left: 1.5rem;
+  }
+
+  .middle {
+    display: flex;
+
+    form {
+      display: flex;
+      input {
+        width: 500px;
+        height: 40px;
+        font-size: 1.125rem;
+        padding: 0 0.625rem;
+        border-left: 1px solid #cccccc;
+        border-top: 1px solid #cccccc;
+        border-bottom: 1px solid #cccccc;
+        border-right: none;
+        box-sizing: border-box;
+        border-radius: 2px 0 0 2px;
+      }
+
+      button {
+        width: 64px;
+        height: 40px;
+        appearance: none;
+        border: 1px solid #cccccc;
+        border-radius: 0 2px 2px 0;
+        background-color: #f8f8f8;
+      }
+    }
+
+    .btn-mic {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-left: 0.5rem;
+      background-color: #f9f9f9;
+    }
+  }
+
+  .right {
+    display: flex;
+    button {
+      margin-left: 1.5rem;
+    }
+  }
+}
+
+#sidebar {
+  width: 240px;
+  height: calc(100vh - 56px);
+  background-color: #fff;
+  padding-right: 1rem;
+  box-sizing: border-box;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  overflow: auto;
+
+  nav {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    a {
+      color: #030303;
+      font-size: 0.875rem;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      padding: 0 1.5rem;
+
+      span {
+        margin-left: 1.5rem;
+      }
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+    }
+  }
+
+  .pitch-signin {
+    padding: 0.625rem 0.625rem 0.625rem 1.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    button {
+      margin-top: 0.875rem;
+    }
+  }
+
+  .nav-with-title {
+    h3 {
+      font-size: 14px;
+      font-weight: 500;
+      color: #606060;
+      text-transform: uppercase;
+      padding: 1rem 1.5rem;
+    }
+  }
+
+  .sitemap {
+    margin-top: 1rem;
+
+    p {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      padding: 0 0 0 1.5rem;
+      line-height: 1.6;
+
+      a {
+        color: #606060;
+        margin-right: 0.1875rem;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    color: #989898;
+    font-size: 0.8125rem;
+    padding: 0.25rem 1.5rem 1rem;
+  }
+}
+
+#content {
+  margin: 56px 0 0 240px;
+}
+
+#header-tags {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 0 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  a {
+    color: #030303;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    padding: 0 1.25rem;
+    margin-right: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.05);
+    white-space: nowrap;
+
+    &.selected {
+      color: #fff;
+      background-color: #030303;
+    }
+  }
+}
+
+.thumbs-list {
+  padding: 1.5rem;
+  display: grid;
+  column-gap: 2rem;
+  row-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  .thumb {
+    width: 100%;
+  }
+
+  .details {
+    display: grid;
+    column-gap: 0.875rem;
+    grid-template-columns: 2.25rem 1fr;
+    margin-top: 0.625rem;
+  }
+
+  h4 {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: #606060;
+    font-size: 0.875rem;
+    margin-bottom: 4px;
+  }
+
+  .live {
+    color: #fff;
+    font-size: 12px;
+    background-color: #CC0000;
+    border-radius: 2px;
+    padding: 0 4px;
+    display: inline-flex;
+    align-items: center;
+    text-transform: uppercase;
+
+    svg {
+      margin-right: 2px;
+    }
+  }
+}
